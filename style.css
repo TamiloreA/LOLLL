@@ -1,0 +1,234 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #bef2f5;
+  }
+  
+  .center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 50%;
+    -moz-transform: translate(-50%, 0%);
+    -ms-transform: translate(-50%, 0%);
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+  }
+  
+  .container {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .pokeball {
+    background: #232323;
+    width: 100px;
+    height: 100px;
+    top: 100px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    z-index: 2;
+  }
+  .pokeball::before {
+    content: "";
+    height: 50%;
+    width: 105%;
+    background: #ce0000;
+    position: absolute;
+    left: -3px;
+    -moz-border-radius: 200px 200px 0px 0px;
+    -webkit-border-radius: 200px;
+    border-radius: 200px 200px 0px 0px;
+  }
+  .pokeball::after {
+    content: "";
+    height: 50%;
+    width: 105%;
+    background: #fff;
+    position: absolute;
+    bottom: -10px;
+    left: -3px;
+    -moz-border-radius: 0px 0px 200px 200px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px 0px 200px 200px;
+    box-shadow: inset -10px 0px 0px rgba(0, 0, 0, 0.2);
+    -moz-animation: "shadowShadow 0.5s infinite";
+    -webkit-animation: "shadowShadow 0.5s infinite";
+    animation: "shadowShadow 0.5s infinite";
+  }
+  .pokeball button {
+    background: #fff;
+    height: 32px;
+    width: 32px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    border: 5px solid #202020;
+    z-index: 1;
+  }
+  
+  @keyframes shadowShadow {
+    0% {
+      left: 100px;
+      box-shadow: inset 10px 0px 0px rgba(0, 0, 0, 0.2) !important;
+    }
+    50% {
+      left: 100px;
+      box-shadow: inset -10px 0px 0px rgba(0, 0, 0, 0.2) !important;
+    }
+    100% {
+      left: 100px;
+      box-shadow: inset 10px 0px 0px rgba(0, 0, 0, 0.2) !important;
+    }
+  }
+  .shine {
+    height: 10px;
+    width: 20px;
+    -moz-border-radius: 200px;
+    -webkit-border-radius: 200px;
+    border-radius: 200px;
+    position: absolute;
+    z-index: 2;
+    left: 16px;
+    top: 14px;
+    background: #fff;
+    -moz-transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+    -webkit-transform: rotate(-35deg);
+    transform: rotate(-35deg);
+  }
+  
+  .pokeballShadow {
+    background: #202020;
+    opacity: 0.5;
+    height: 15px;
+    width: 110px;
+    top: 220px;
+    z-index: 1;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    /**  @include filter(blur(10px));
+  **/
+  }
+  
+  .animate {
+    animation: animatePokeball 2s ease-in-out infinite;
+    transform-origin: bottom center;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+  .shadowAnimate {
+    animation: shadowMove 2s ease-in-out infinite;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+  @keyframes shadowMove {
+    0% {
+      left: 50%;
+    }
+    50% {
+      left: 56%;
+    }
+    100% {
+      left: 50%;
+    }
+  }
+  @keyframes animatePokeball {
+    0% {
+      left: 48%;
+      -moz-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+      -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+    }
+    50% {
+      left: 52%;
+      -moz-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+      -webkit-transform: rotate(10deg);
+      transform: rotate(10deg);
+    }
+    100% {
+      left: 48%;
+      -moz-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+      -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+    }
+  }
+  .bubble {
+    height: 80px;
+    width: 180px;
+    background: linear-gradient(#8affd8, #05677d);
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+  }
+  .bubble span {
+    color: #fff;
+    font-family: open sans;
+    position: relative;
+    top: 25px;
+    font-size: 20px;
+    left: 40px;
+  }
+  
+  .bubbleArrow {
+    border-top: 20px solid transparent;
+    border-right: 15px solid #bef2f5;
+    border-left: 15px solid #bef2f5;
+    height: 0;
+    width: 0;
+    top: 52px;
+    background: #05677d;
+    position: relative;
+    left: 40px;
+    opacity: 0;
+  }
+  
+  .bubbleAnimation {
+    top: 300px;
+    position: absolute;
+    opacity: 0;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  
+  .bubbleAnimation2 {
+    /**height:80px;
+    width:140px;**/
+    position: absolute;
+    top: -120px;
+    opacity: 1;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  
+  .bubbleContainer {
+    height: 80px;
+    width: 140px;
+  }
